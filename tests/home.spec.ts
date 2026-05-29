@@ -35,7 +35,7 @@ test.describe(" E-commerce Flow", () => {
   });
 
   
-  test.only(" Add book to cart then procicing to payment ", async ({ page }) => {
+  test(" Add book to cart then procicing to payment ", async ({ page }) => {
 
     await homePage.funBooks();
     await expect(page).toHaveURL(/books/);
