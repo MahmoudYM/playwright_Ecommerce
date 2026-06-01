@@ -47,5 +47,12 @@ test.describe(" E-commerce Flow", () => {
 
   });
 
+   test(" click on wishe list ", async ({ page }) => {
+
+    await expect(homePage.wishlist).toHaveText(/Wishlist\s*\(\d+\)/);
+    await homePage.funWishlist()
+
+  });
+
 
 });

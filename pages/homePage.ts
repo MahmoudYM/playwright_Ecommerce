@@ -9,15 +9,15 @@ export class HomePage {
   readonly logOut:Locator; 
   readonly register:Locator;
   readonly countryDropdown:Locator;
-
+  readonly wishlist:Locator;
   constructor(page: Page) {
     this.page = page;
-   
     this.books = page.locator("ul.list a[href='/books']");
     this.addToCart=page.locator(".product-item");
     this.shopingCart= page.locator('.header-links').getByRole('link', { name: /Shopping cart/ })
     this.logOut= page.locator('.header-links').getByRole('link', { name: /Log out/ })
     this.register= page.locator('.header-links').getByRole('link', { name: /Register/ })
+    this.wishlist=page.locator('.header-links').getByRole('link', { name: /Wishlist/ })
     this.countryDropdown = page.locator('#CountryId');
   }
 
@@ -28,6 +28,13 @@ export class HomePage {
   async funLogOut ()
   {
     await this.logOut.click()
+  }
+
+  async funWishlist ()
+  {
+    await this
+          .wishlist
+             .click()
   }
 
   async funAddToCart(productButton:string) {
