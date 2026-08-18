@@ -1,0 +1,16 @@
+{
+    "billingAddress": {
+      "firstName": "Mahmoud",
+      "lastName": "Ali",
+      "email": "mahmoud@test.com",
+      "company": "Test Company",
+      "country": "Egypt",
+      "province": "Other (Non US)",
+      "city": "Cairo",
+      "address": "123 Test Street",
+      "addressTwo": "Apartment 5",
+      "postalCode": "11511",
+      "phoneNumber": "01000000000",
+      "faxNumber": "123456"
+    }
+  }

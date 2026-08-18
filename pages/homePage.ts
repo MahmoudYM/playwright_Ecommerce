@@ -2,7 +2,7 @@ import { Locator, Page } from "@playwright/test";
 
 export class HomePage {
 
-  page: Page;
+    page: Page;
   // Containers
   readonly topMenu: Locator;
   readonly listbox: Locator;
@@ -35,6 +35,7 @@ export class HomePage {
   
   constructor(page: Page) {
   // Containers — single source of truth
+  this.page=page;
   this.topMenu = page.locator('ul.top-menu');
   this.listbox = page.locator('div.listbox ul.list');
 

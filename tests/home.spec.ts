@@ -34,9 +34,7 @@ test.describe(" E-commerce Flow", () => {
     await expect(homePage.register).toHaveText("Register")
   });
 
-  
-  test(" Add book to cart then procicing to payment ", async ({ page }) => {
-
+  test(" Add book to cart then procecing to payment ", async ({ page }) => {
     await homePage.funBooks();
     await expect(page).toHaveURL(/books/);
     await homePage.funAddToCart("Computing and Internet" )
@@ -49,11 +47,19 @@ test.describe(" E-commerce Flow", () => {
 
    test(" click on wishe list ", async ({ page }) => {
 
+     await homePage.funWishlist()
     await expect(homePage.wishlist).toHaveText(/Wishlist\s*\(\d+\)/);
-    await homePage.funWishlist()
 
   });
-  
+
+   test(" verify login then logout ", async ({ page }) => {
+    await loginpage.funEmail("mahmoud@test.com")
+    await loginpage.funPassword("Test@1234")
+    await loginpage.clickButton()
+    await homePage.funLogOut()
+    await expect(homePage.register).toHaveText("Register")
+   });
+   
 
 
 });
